@@ -1,0 +1,13 @@
+package com.igate;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Component;
+@Component
+public class DaoImpl {
+	private JdbcTemplate jt;
+
+	public void setJt(JdbcTemplate jt) {
+		this.jt = jt;
+	}
+	
+}
