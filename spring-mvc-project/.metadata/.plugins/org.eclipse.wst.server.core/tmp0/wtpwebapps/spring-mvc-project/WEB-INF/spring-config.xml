@@ -30,7 +30,20 @@
 		<property name="suffix" value=".jsp"></property>
 	</bean>
 	
+	<bean name="dmds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/opentrade"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value=""></property>
+	</bean>
 	
+	<bean name="jtemp" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dmds"></property>
+	</bean>
+	
+	<bean name="dao" class="com.igate.DaoImpl">
+		<property name="jt" ref="jtemp"></property>
+	</bean>
 	
 	
 </beans>

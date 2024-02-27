@@ -1,0 +1,21 @@
+package com.igate;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@Component
+public class MyController {
+	
+	@Autowired
+	private DaoImpl daoimpl;
+	
+	@RequestMapping("/test")
+	public String getTest() {
+		String sql="insert into products values(1003,'Garden chair',1000,20)";
+		daoimpl.insertProducts(sql);
+		return "test";
+	}
+}
