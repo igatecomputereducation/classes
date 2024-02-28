@@ -13,14 +13,11 @@ public class DaoImpl {
 		this.jt = jt;
 	}
 	
-	public void insertProducts(String qry) {
+	public void modifyProducts(String qry) {
 		jt.update(qry);
 	}
 	
-	public void deleteProducts(String qry) {
-		jt.update(qry);
-	}
-	
+		
 	public List<Products> getProducts(){
 		String qry="select * from products";
 		List<Products> list=jt.query(qry, new RowMapperImpl());
