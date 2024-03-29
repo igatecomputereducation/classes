@@ -1,0 +1,19 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+	<head>
+	</head>
+	<body>
+		<table cellspacing="0" cellpadding="10" width="50%" align="center" >
+			<tr>
+				<td>Student Name</td>
+				<td>Course</td>
+				<td>Semister</td>
+			</tr>
+			<tr th:each="ob:${list}">
+				<td th:text="${ob.sname}"></td>
+				<td th:text="${ob.course}"></td>
+				<td th:text="${ob.sem}"></td>
+			</tr>
+		</table>
+		
+	</body>
+</html>
