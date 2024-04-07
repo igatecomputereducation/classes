@@ -1,0 +1,21 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+	<body>
+		<h2>Employee Name: [[${ob.ename}]]</h2>
+		<h2>Gender: 
+		<span th:if="${ob.gender == 'M'}">Male</span>
+		<span th:if="${ob.gender == 'F'}">Female</span>
+		</h2>
+		<h2>Status: <span th:text="${ob.active} ? 'Working' : 'Retired' "></span></h2>
+		<div th:switch="${ob.grade}">
+			<span th:case="A">
+				<h2>First Grade Employee</h2>
+			</span>
+			<span th:case="B">
+				<h2>Second Grade Employee</h2>
+			</span>
+			<span th:case="*">
+				<h2>Temporary Employee</h2>
+			</span>
+		</div>
+	</body>
+</html>

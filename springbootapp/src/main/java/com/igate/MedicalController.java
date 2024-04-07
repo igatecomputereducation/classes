@@ -56,6 +56,14 @@ public class MedicalController {
 		return "update";
 	}
 	
+	@GetMapping("/emp")
+	public String displayEmployee(Model m) {
+		Employee e=new Employee("Narasimha", "M", 12000, false, "C");
+		m.addAttribute("ob", e);
+		return "emp";
+	}
+	
+	
 	
 	
 }
